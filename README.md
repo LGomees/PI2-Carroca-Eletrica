@@ -1,4 +1,8 @@
-## Carroça Elétrica
+# Carroça Elétrica - Coleta Fácil
+
+<p align="center">
+![ColetaFácil](https://user-images.githubusercontent.com/18038966/132580877-b430fc4d-6a69-417b-a076-8453de0fd8a5.png)
+</p>
 
 Um estudo de 2020, do Anuário da Reciclagem, identificou que no Brasil existem mais de 1,8 mil cooperativas de reciclagem ativas no país, cujo trabalho não se restringe à limpeza e recolhimento de lixo propriamente dito, mas também atuam nos programas de logística reversa das grandes companhias de alimentos, bebidas e bens diversos que geram embalagens de variados materiais e que, por lei, precisam ter destinação correta.
 
