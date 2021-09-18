@@ -12,17 +12,56 @@ const Drawer = createDrawerNavigator();
 
 const Dashboard: React.FC = () => {
   return (
-    <DrawerContainer>
-      <Drawer.Navigator
-        initialRouteName="Vehicle"
-        useLegacyImplementation
-        screenOptions={{headerShown: false, drawerType: 'permanent'}}>
-        <Drawer.Screen name="Vehicle" component={Vehicle} />
-        <Drawer.Screen name="Map" component={Map} />
-        <Drawer.Screen name="Relatórios" component={Report} />
-        <Drawer.Screen name="Nova Coleta" component={NewCollect} />
-      </Drawer.Navigator>
-    </DrawerContainer>
+    <Drawer.Navigator
+      initialRouteName="Vehicle"
+      useLegacyImplementation
+      screenOptions={{
+        drawerStyle: {
+          backgroundColor: '#3aafb9',
+          width: 150,
+          height: '100%',
+        },
+        drawerContentStyle: {},
+        drawerLabelStyle: {
+          color: '#fefefe',
+        },
+        drawerActiveBackgroundColor: '#fefefe',
+        drawerInactiveBackgroundColor: '#3aafb9',
+        drawerItemStyle: {
+          width: '100%',
+          height: '22%',
+        },
+        drawerContentContainerStyle: {
+          flexDirection: 'column',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          height: '100%',
+          width: '100%',
+        },
+        headerShown: false,
+        drawerType: 'permanent',
+      }}>
+      <Drawer.Screen
+        name="Vehicle"
+        component={Vehicle}
+        options={{drawerLabel: 'Carroça'}}
+      />
+      <Drawer.Screen
+        name="Map"
+        component={Map}
+        options={{drawerLabel: 'Mapa'}}
+      />
+      <Drawer.Screen
+        name="Relatórios"
+        component={Report}
+        options={{drawerLabel: 'Relatórios'}}
+      />
+      <Drawer.Screen
+        name="Nova Coleta"
+        component={NewCollect}
+        options={{drawerLabel: 'Nova Coleta'}}
+      />
+    </Drawer.Navigator>
   );
 };
 

@@ -1,11 +1,12 @@
 import React from 'react';
 import {View, Text} from 'react-native';
+import {Container} from './styles';
 
 const Vehicle: React.FC = () => {
   return (
-    <View>
+    <Container>
       <Text>Carroça</Text>
-    </View>
+    </Container>
   );
 };
 
