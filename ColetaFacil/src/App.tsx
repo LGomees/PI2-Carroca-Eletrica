@@ -6,8 +6,11 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 import RegisterScreen from './Pages/Register';
 import Dashboard from './Pages/Dashboard';
+import MyMap from './Pages/MyMap';
+import Report from './Pages/Report';
+import NewCollect from './Pages/NewCollect';
 
-const src: React.FC = () => {
+const src: React.FC = ({navigation}) => {
   const Stack = createNativeStackNavigator();
 
   const navTheme = DefaultTheme;
@@ -17,7 +20,7 @@ const src: React.FC = () => {
   useEffect(() => {}, []);
 
   return (
-    <SafeAreaView horizontal style={{flex: 1}}>
+    <SafeAreaView style={{flex: 1}}>
       <StatusBar hidden />
       <NavigationContainer theme={navTheme}>
         <Stack.Navigator
@@ -25,6 +28,9 @@ const src: React.FC = () => {
           screenOptions={{headerShown: false}}>
           <Stack.Screen name="RegisterScreen" component={RegisterScreen} />
           <Stack.Screen name="Dashboard" component={Dashboard} />
+          <Stack.Screen name="MyMap" component={MyMap} />
+          <Stack.Screen name="Report" component={Report} />
+          <Stack.Screen name="NewCollect" component={NewCollect} />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaView>

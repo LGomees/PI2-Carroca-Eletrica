@@ -1,12 +1,12 @@
 import React from 'react';
 import {View, Text} from 'react-native';
 
-const Map: React.FC = () => {
+const NewCollect: React.FC = ({navigation}) => {
   return (
     <View>
-      <Text>Relatórios</Text>
+      <Text>Nova Coleta</Text>
     </View>
   );
 };
 
-export default Map;
+export default NewCollect;

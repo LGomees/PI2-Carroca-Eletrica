@@ -2,7 +2,7 @@ import React from 'react';
 import {View, Text} from 'react-native';
 import {Container} from './styles';
 
-const Map: React.FC = () => {
+const MyMap: React.FC = ({navigation}) => {
   return (
     <Container>
       <Text>Map</Text>
@@ -10,4 +10,4 @@ const Map: React.FC = () => {
   );
 };
 
-export default Map;
+export default MyMap;

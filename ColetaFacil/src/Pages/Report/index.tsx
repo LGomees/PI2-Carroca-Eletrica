@@ -1,12 +1,12 @@
 import React from 'react';
 import {View, Text} from 'react-native';
 
-const NewCollect: React.FC = () => {
+const Report: React.FC = () => {
   return (
     <View>
-      <Text>Nova Coleta</Text>
+      <Text>Relatórios</Text>
     </View>
   );
 };
 
-export default NewCollect;
+export default Report;
