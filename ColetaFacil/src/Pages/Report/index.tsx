@@ -1,11 +1,17 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {Text} from 'react-native';
+
+import MenuBar from '../../Components/MenuBar';
+import {Container, ContentContainer} from './styles';
 
 const Report: React.FC = () => {
   return (
-    <View>
-      <Text>Relatórios</Text>
-    </View>
+    <Container>
+      <MenuBar />
+      <ContentContainer>
+        <Text>Relatórios</Text>
+      </ContentContainer>
+    </Container>
   );
 };
 

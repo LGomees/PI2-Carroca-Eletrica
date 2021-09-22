@@ -1,13 +1,18 @@
 import React from 'react';
-import {View, Text} from 'react-native';
-import {Container} from './styles';
+import {Text} from 'react-native';
 
-const MyMap: React.FC = ({navigation}) => {
+import MenuBar from '../../Components/MenuBar';
+import {Container, ContentContainer} from './styles';
+
+const Report: React.FC = () => {
   return (
     <Container>
-      <Text>Map</Text>
+      <MenuBar />
+      <ContentContainer>
+        <Text>Relatórios</Text>
+      </ContentContainer>
     </Container>
   );
 };
 
-export default MyMap;
+export default Report;
