@@ -1,8 +1,8 @@
 import React from 'react';
 
-import MenuButton from '../MenuButton';
-import {Container} from './styles';
+import {useNavigation} from '@react-navigation/native';
 
+import MenuButton from '../MenuButton';
 import cartIcon from '../../assets/images/iconeCarroca.png';
 import selectedCartIcon from '../../assets/images/iconeCarrocaSelecionada.png';
 import collectIcon from '../../assets/images/iconeColeta.png';
@@ -12,7 +12,10 @@ import selectedMapIcon from '../../assets/images/iconeMapaSelecionado.png';
 import reportIcon from '../../assets/images/iconeRelatorio.png';
 import selectedReportIcon from '../../assets/images/iconeRelatorioSelecionado.png';
 
-const MenuBar: React.FC = ({navigation}) => {
+import {Container} from './styles';
+
+const MenuBar: React.FC = () => {
+  const navigation = useNavigation();
   return (
     <Container>
       <MenuButton
@@ -21,7 +24,7 @@ const MenuBar: React.FC = ({navigation}) => {
         src={cartIcon}
       />
       <MenuButton
-        onPress={() => navigation.navigate('Map')}
+        onPress={() => navigation.navigate('MyMap')}
         title={'Mapa'}
         src={mapIcon}
       />

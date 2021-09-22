@@ -1,7 +1,10 @@
 import React from 'react';
 import {ButtonText, Container, Input, RegisterButton, Title} from './styles';
+import {useNavigation} from '@react-navigation/native';
 
-const Register: React.FC = ({navigation}) => {
+const Register: React.FC = () => {
+  const navigation = useNavigation();
+
   return (
     <Container>
       <Title>CADASTRO</Title>
