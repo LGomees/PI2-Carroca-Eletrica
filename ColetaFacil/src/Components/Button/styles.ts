@@ -1,19 +1,21 @@
 import styled from 'styled-components';
 
 export const Container = styled.TouchableOpacity`
-  flex: 1;
-  width: 100%;
-  height: 100%;
+  /* flex: 1; */
+  width: 40%;
+  height: 15%;
+  background-color: green;
   align-items: center;
   justify-content: center;
-`;
-
-export const ButtonIcon = styled.Image`
-  width: 35px;
-  height: 35px;
+  border-radius: 10px;
+  color: #fefefe;
+  margin-top: 15px;
+  margin-bottom: 15px;
 `;
 
 export const ButtonText = styled.Text`
   font-size: 16px;
   color: #fefefe;
+  text-align: center;
+  font-weight: bold;
 `;

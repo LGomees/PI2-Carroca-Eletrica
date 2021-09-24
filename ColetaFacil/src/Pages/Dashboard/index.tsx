@@ -1,8 +1,9 @@
-import React, {useEffect, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 
 import {Icon} from 'react-native-elements';
 
 import MenuBar from '../../Components/MenuBar';
+import AppContext from '../../Contexts/AppContext';
 import {
   BatteryContainer,
   BlinkersContainer,
@@ -19,6 +20,8 @@ import {
 } from './styles';
 
 const Dashboard: React.FC = ({navigation}) => {
+  const {currentWeight} = useContext(AppContext);
+
   const [color, setColor] = useState(0);
   const [color2, setColor2] = useState(1);
 
@@ -127,7 +130,7 @@ const Dashboard: React.FC = ({navigation}) => {
             />
           </BatteryContainer>
           <WeightContainer>
-            <WeightText>{30 + speed * 5.5}</WeightText>
+            <WeightText>{currentWeight}</WeightText>
             <Icon
               name="weight-kilogram"
               type="material-community"

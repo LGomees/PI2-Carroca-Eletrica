@@ -12,7 +12,6 @@ const MenuButton: React.FC<MenuButtonProps> = ({
   onPress,
   src,
   title,
-
   ...rest
 }) => {
   return (

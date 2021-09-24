@@ -16,8 +16,15 @@ export const ContentContainer = styled.View`
   padding: 1%;
   margin-right: 5px;
   border-radius: 10px;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   background-color: #fefefe;
+`;
+
+export const WeightDifferenceText = styled.Text`
+  color: green;
+  font-size: 24px;
+  font-weight: bold;
+  align-self: center;
 `;
