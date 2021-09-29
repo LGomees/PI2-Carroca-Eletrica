@@ -94,9 +94,10 @@ export const WeightContainer = styled.View`
   width: 100%;
   height: 48%;
   align-items: center;
-  flex-direction: row;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: center;
   padding: 1%;
+  padding-left: 10%;
   background-color: #fefefe;
 `;
 
@@ -105,9 +106,13 @@ export const WeightText = styled.Text`
   width: 70%;
   font-size: 48px;
   margin-top: 10px;
-  margin-left: 10px;
   font-weight: bold;
   text-align: center;
   align-items: center;
   justify-content: center;
+`;
+
+export const WeightImage = styled.Image`
+  height: 65px;
+  width: 115px;
 `;

@@ -29,14 +29,14 @@ const MenuBar: React.FC = () => {
         src={mapIcon}
       />
       <MenuButton
-        onPress={() => navigation.navigate('Report')}
-        title={'Relatório'}
-        src={reportIcon}
-      />
-      <MenuButton
         onPress={() => navigation.navigate('NewCollect')}
         title={'Nova Coleta'}
         src={collectIcon}
+      />
+      <MenuButton
+        onPress={() => navigation.navigate('Report')}
+        title={'Relatório'}
+        src={reportIcon}
       />
     </Container>
   );

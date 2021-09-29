@@ -1,6 +1,5 @@
 import React, {useContext, useState} from 'react';
-import {Text} from 'react-native';
-
+import {useNavigation} from '@react-navigation/native';
 import AppContext from '../../Contexts/AppContext';
 
 import MenuBar from '../../Components/MenuBar';
@@ -12,12 +11,14 @@ const NewCollect: React.FC = () => {
   const {currentWeight, report, setCurrentWeight, setReport} =
     useContext(AppContext);
 
+  const navigation = useNavigation();
   const [stage, setStage] = useState('normal');
   const [newWeight, setNewWeight] = useState(currentWeight + 50);
 
   const handleNewCollect = () => {
     setCurrentWeight(newWeight);
     setStage('normal');
+    navigation.navigate('Dashboard');
   };
 
   return (

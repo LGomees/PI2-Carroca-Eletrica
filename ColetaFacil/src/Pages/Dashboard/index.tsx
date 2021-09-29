@@ -1,9 +1,13 @@
 import React, {useContext, useEffect, useState} from 'react';
+import {useIsFocused} from '@react-navigation/native';
 
 import {Icon} from 'react-native-elements';
+import Toast from 'react-native-root-toast';
 
 import MenuBar from '../../Components/MenuBar';
 import AppContext from '../../Contexts/AppContext';
+import weightImage from '../../assets/images/BalancaPeso.png';
+
 import {
   BatteryContainer,
   BlinkersContainer,
@@ -17,10 +21,12 @@ import {
   WeightText,
   MyBatery,
   BateryText,
+  WeightImage,
 } from './styles';
 
 const Dashboard: React.FC = ({navigation}) => {
   const {currentWeight} = useContext(AppContext);
+  const isScreenOnFocus = useIsFocused();
 
   const [color, setColor] = useState(0);
   const [color2, setColor2] = useState(1);
@@ -45,6 +51,17 @@ const Dashboard: React.FC = ({navigation}) => {
 
     if (speed >= 35) {
       setUp(false);
+      if (isScreenOnFocus)
+        Toast.show('Cuidado com a velocidade!', {
+          backgroundColor: '#fe5252',
+          duration: 200,
+          position: Toast.positions.TOP,
+          shadow: true,
+          animation: true,
+          hideOnPress: true,
+          delay: 0,
+          opacity: 0.98,
+        });
     } else if (speed <= 5) {
       setUp(true);
     }
@@ -131,12 +148,7 @@ const Dashboard: React.FC = ({navigation}) => {
           </BatteryContainer>
           <WeightContainer>
             <WeightText>{currentWeight}</WeightText>
-            <Icon
-              name="weight-kilogram"
-              type="material-community"
-              size={80}
-              color="#093a3e"
-            />
+            <WeightImage source={weightImage} />
           </WeightContainer>
         </RightContainer>
       </ContentContainer>
