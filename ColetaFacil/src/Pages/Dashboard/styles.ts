@@ -31,12 +31,10 @@ export const LeftContainer = styled.View`
 `;
 
 export const RightContainer = styled.View`
-  /* flex: 1; */
   width: 40%;
   align-items: center;
   border-radius: 10px;
   flex-direction: column;
-  background-color: black;
   justify-content: space-between;
 `;
 
@@ -47,7 +45,6 @@ export const BlinkersContainer = styled.View`
   align-items: flex-end;
   justify-content: space-between;
   margin-left: 12px;
-  /* background-color: blue; */
 `;
 
 export const SpeedometerContainer = styled.View`
@@ -61,24 +58,48 @@ export const SpeedometerContainer = styled.View`
 export const MySpeedometer = styled(Speedometer)`
   width: 98%;
   align-self: center;
-  /* margin-right: 12%; */
 `;
 
 export const BatteryContainer = styled.View`
-  /* flex: 4.8; */
   height: 48%;
   width: 100%;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
-  background-color: #fefefe;
+`;
+
+export const BateryImage = styled.Image`
+  height: 95px;
+  width: 50px;
+  margin-left: 15px;
+`;
+
+export const BatteryTextContainer = styled.View`
+  width: 65%;
+  height: 100%;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+`;
+
+export const BateryPercentage = styled.Text`
+  color: orange;
+  font-size: 38px;
+  font-weight: bold;
+  align-self: center;
 `;
 
 export const BateryText = styled.Text`
-  color: orange;
-  font-size: 24px;
+  color: #093a3e;
+  font-size: 16px;
   font-weight: bold;
   align-self: center;
-  margin-left: 28px;
+`;
+
+export const BateryTimeLeft = styled.Text`
+  color: orange;
+  font-size: 16px;
+  font-weight: bold;
 `;
 
 export const MyBatery = styled(Speedometer)`
@@ -90,7 +111,6 @@ export const MyBatery = styled(Speedometer)`
 `;
 
 export const WeightContainer = styled.View`
-  /* flex: 4.8; */
   width: 100%;
   height: 48%;
   align-items: center;

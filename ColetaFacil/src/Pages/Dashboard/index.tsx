@@ -1,4 +1,5 @@
 import React, {useContext, useEffect, useState} from 'react';
+import {Image} from 'react-native';
 import {useIsFocused} from '@react-navigation/native';
 
 import {Icon} from 'react-native-elements';
@@ -6,7 +7,13 @@ import Toast from 'react-native-root-toast';
 
 import MenuBar from '../../Components/MenuBar';
 import AppContext from '../../Contexts/AppContext';
+
 import weightImage from '../../assets/images/BalancaPeso.png';
+import completeBatery from '../../assets/images/BateriaCheia.png';
+import highBatery from '../../assets/images/BateriaAlta.png';
+import mediumBatery from '../../assets/images/BateriaMedia.png';
+import lowBatery from '../../assets/images/BateriaBaixa.png';
+import reallyLowBatery from '../../assets/images/BateriaMuitoBaixa.png';
 
 import {
   BatteryContainer,
@@ -19,9 +26,12 @@ import {
   WeightContainer,
   MySpeedometer,
   WeightText,
-  MyBatery,
   BateryText,
   WeightImage,
+  BatteryTextContainer,
+  BateryPercentage,
+  BateryTimeLeft,
+  BateryImage,
 } from './styles';
 
 const Dashboard: React.FC = ({navigation}) => {
@@ -34,7 +44,24 @@ const Dashboard: React.FC = ({navigation}) => {
   const [Up, setUp] = useState(true);
   const [speed, setSpeed] = useState(0);
 
+  const [bateryLevel, setBateryLevel] = useState(100);
+
   const blinkersColor = ['#d2d3d5', '#3aafb9'];
+
+  useEffect(() => {
+    if (bateryLevel <= 30 && isScreenOnFocus) {
+      Toast.show('Bateria do motor baixa!', {
+        backgroundColor: '#fe5252',
+        duration: 400,
+        position: Toast.positions.TOP,
+        shadow: true,
+        animation: true,
+        hideOnPress: true,
+        delay: 0,
+        opacity: 0.98,
+      });
+    }
+  }, [bateryLevel]);
 
   useEffect(() => {
     let intervalId;
@@ -54,7 +81,7 @@ const Dashboard: React.FC = ({navigation}) => {
       if (isScreenOnFocus)
         Toast.show('Cuidado com a velocidade!', {
           backgroundColor: '#fe5252',
-          duration: 200,
+          duration: 400,
           position: Toast.positions.TOP,
           shadow: true,
           animation: true,
@@ -66,8 +93,24 @@ const Dashboard: React.FC = ({navigation}) => {
       setUp(true);
     }
 
+    setBateryLevel(speed * 2 + 10);
+
     return () => clearTimeout(intervalId);
   }, [speed]);
+
+  const checkBateryLevel = () => {
+    if (bateryLevel >= 85) {
+      return completeBatery;
+    } else if (bateryLevel <= 85 && bateryLevel > 50) {
+      return highBatery;
+    } else if (bateryLevel == 50) {
+      return mediumBatery;
+    } else if (bateryLevel < 50 && bateryLevel > 25) {
+      return lowBatery;
+    } else if (bateryLevel <= 25 && bateryLevel >= 0) {
+      return reallyLowBatery;
+    }
+  };
 
   return (
     <Container>
@@ -124,27 +167,14 @@ const Dashboard: React.FC = ({navigation}) => {
         </LeftContainer>
         <RightContainer>
           <BatteryContainer>
-            <BateryText>Nível da Bateria</BateryText>
-            <MyBatery
-              noNeedle
-              max={100}
-              value={100 - speed * 2}
-              size={150}
-              angle={360}
-              noLineMarks
-              noBackground
-              noNumberMarks
-              duration={500}
-              lineCap="round"
-              indicatorCentered
-              primaryArcWidth={15}
-              accentColor="orange"
-              indicatorStyle={{
-                color: 'orange',
-                marginRight: 50,
-              }}
-              indicatorSuffix=" %"
-            />
+            <BateryImage source={checkBateryLevel()} />
+            <BatteryTextContainer>
+              <BateryPercentage>{bateryLevel}%</BateryPercentage>
+              <BateryText>Tempo Restante:</BateryText>
+              <BateryTimeLeft>
+                {Math.floor(speed / 10)}h{speed + 15}m
+              </BateryTimeLeft>
+            </BatteryTextContainer>
           </BatteryContainer>
           <WeightContainer>
             <WeightText>{currentWeight}</WeightText>
