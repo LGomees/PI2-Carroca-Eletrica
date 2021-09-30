@@ -5,7 +5,12 @@ import AppContext from '../../Contexts/AppContext';
 import MenuBar from '../../Components/MenuBar';
 import Button from '../../Components/Button';
 
-import {Container, ContentContainer, WeightDifferenceText} from './styles';
+import {
+  Container,
+  ContentContainer,
+  CurrentWeightText,
+  WeightDifferenceText,
+} from './styles';
 
 const NewCollect: React.FC = () => {
   const {currentWeight, report, setCurrentWeight, setReport} =
@@ -26,15 +31,32 @@ const NewCollect: React.FC = () => {
       <MenuBar />
       <ContentContainer>
         {stage === 'normal' ? (
-          <Button
-            onPress={() => setStage('startNewCollect')}
-            title={'INICIAR\nNOVA COLETA'}
-          />
+          <>
+            <Button
+              onPress={() => setStage('startNewCollect')}
+              title={'INICIAR\nNOVA COLETA'}
+            />
+            {/* <CurrentWeightText>
+              Atualmente, sua carroça carrega
+            </CurrentWeightText>
+            <CurrentWeightText>{currentWeight} quilos!</CurrentWeightText> */}
+          </>
         ) : (
           <></>
         )}
         {stage === 'startNewCollect' ? (
           <>
+            <WeightDifferenceText>NOVA COLETA:{'\n'}</WeightDifferenceText>
+            <WeightDifferenceText>
+              Pesagem atual: {newWeight} Kg
+            </WeightDifferenceText>
+            <WeightDifferenceText>
+              Peso anterior à coleta: {currentWeight} Kg{'\n'}
+            </WeightDifferenceText>
+            <WeightDifferenceText>
+              Peso coletado: {newWeight - currentWeight} Kg
+            </WeightDifferenceText>
+
             <Button
               onPress={() => handleNewCollect()}
               title={'CONCLUIR\nNOVA COLETA'}
@@ -44,10 +66,6 @@ const NewCollect: React.FC = () => {
               title={'CANCELAR'}
               style={{backgroundColor: 'red', width: '25%'}}
             />
-            <WeightDifferenceText>Você está coletando:</WeightDifferenceText>
-            <WeightDifferenceText>
-              {newWeight - currentWeight} Kg
-            </WeightDifferenceText>
           </>
         ) : (
           <></>

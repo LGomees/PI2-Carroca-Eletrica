@@ -25,6 +25,14 @@ export const ContentContainer = styled.View`
 export const WeightDifferenceText = styled.Text`
   color: green;
   font-size: 24px;
+  text-align: justify;
+  font-weight: bold;
+  align-self: center;
+`;
+
+export const CurrentWeightText = styled.Text`
+  color: green;
+  font-size: 24px;
   font-weight: bold;
   align-self: center;
 `;
