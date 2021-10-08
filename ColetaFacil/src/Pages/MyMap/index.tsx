@@ -5,6 +5,7 @@ import Geolocation from '@react-native-community/geolocation';
 import {GooglePlacesAutocomplete} from 'react-native-google-places-autocomplete';
 import MapViewDirections from 'react-native-maps-directions';
 import {Alert, Modal, Text} from 'react-native';
+import {OpenMapDirections} from 'react-native-navigation-directions';
 
 import MenuBar from '../../Components/MenuBar';
 import {
@@ -111,11 +112,23 @@ const Report: React.FC = () => {
         {distance &&
           Alert.alert(
             'Dados da viagem',
-            'Distancia até o destino: ' +
-              distance.toPrecision(2).toString() +
-              ' Km\nTempo para chegada: ' +
-              eta.toPrecision(2).toString() +
-              ' minutos',
+            `Distancia até o destino: ${distance
+              .toPrecision(2)
+              .toString()}Km\nTempo para chegada: ${eta
+              .toPrecision(2)
+              .toString()} minutos`,
+            [
+              {
+                text: 'OK',
+                onPress: () => {
+                  OpenMapDirections(origin, destination, 'b');
+                },
+              },
+              {
+                text: 'Cancelar',
+              },
+            ],
+            {cancelable: false},
           )}
       </ContentContainer>
     </Container>
