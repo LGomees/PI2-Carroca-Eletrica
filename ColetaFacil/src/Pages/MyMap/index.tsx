@@ -1,6 +1,6 @@
 import React, {useEffect, useRef, useState} from 'react';
 import {Button} from 'react-native-elements';
-import MapView from 'react-native-maps';
+import MapView, {Marker} from 'react-native-maps';
 import Geolocation from '@react-native-community/geolocation';
 import {GooglePlacesAutocomplete} from 'react-native-google-places-autocomplete';
 import MapViewDirections from 'react-native-maps-directions';
@@ -84,24 +84,27 @@ const Report: React.FC = () => {
             showsUserLocation={true}
             ref={mapEl}>
             {destination && (
-              <MapViewDirections
-                origin={origin}
-                destination={destination}
-                apikey="AIzaSyDRUZ_X0Tuvhr9QaGabZBAwfRa3lJXhTcI"
-                strokeWidth={3}
-                onReady={result => {
-                  setDistance(result.distance);
-                  setEta(result.duration);
-                  mapEl.current.fitToCoordinates(result.coordinates, {
-                    edgePadding: {
-                      top: 50,
-                      bottom: 50,
-                      left: 50,
-                      right: 50,
-                    },
-                  });
-                }}
-              />
+              <>
+                <Marker coordinate={destination} />
+                <MapViewDirections
+                  origin={origin}
+                  destination={destination}
+                  apikey="AIzaSyDRUZ_X0Tuvhr9QaGabZBAwfRa3lJXhTcI"
+                  strokeWidth={3}
+                  onReady={result => {
+                    setDistance(result.distance);
+                    setEta(result.duration);
+                    mapEl.current.fitToCoordinates(result.coordinates, {
+                      edgePadding: {
+                        top: 50,
+                        bottom: 50,
+                        left: 50,
+                        right: 50,
+                      },
+                    });
+                  }}
+                />
+              </>
             )}
           </MapView>
         </MapContainer>
