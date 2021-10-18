@@ -1,13 +1,20 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {ButtonText, Container, Input, RegisterButton, Title} from './styles';
 import {useNavigation} from '@react-navigation/native';
+import {firebase} from '@react-native-firebase/auth';
 
 const Register: React.FC = () => {
   const navigation = useNavigation();
 
+  const [email, onChangeEmail] = useState('');
+  const [password, onChangePassword] = useState('');
+
   const [user, setUser] = useState(null);
 
-  const registerUser = async dados => {};
+  const registerUser = async () => {
+    await firebase.auth().createUserWithEmailAndPassword(email, password);
+    console.log(email, password);
+  };
 
   return (
     <Container>
@@ -18,6 +25,7 @@ const Register: React.FC = () => {
         keyboardType={'numeric'}
         returnKeyLabel={'next'}
         autoCorrect={false}
+        onChangeText={onChangeEmail}
       />
       <Input
         placeholder={'Email'}
@@ -33,6 +41,7 @@ const Register: React.FC = () => {
         returnKeyLabel={'next'}
         secureTextEntry
         autoCorrect={false}
+        onChangeText={onChangePassword}
       />
       <Input
         placeholder={'Confirmação de Senha'}
@@ -42,6 +51,9 @@ const Register: React.FC = () => {
         secureTextEntry
         autoCorrect={false}
       />
+      <RegisterButton onPress={registerUser}>
+        <ButtonText>CADASTRAR</ButtonText>
+      </RegisterButton>
       <RegisterButton onPress={() => navigation.navigate('Dashboard')}>
         <ButtonText>CADASTRAR</ButtonText>
       </RegisterButton>

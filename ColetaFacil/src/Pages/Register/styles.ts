@@ -25,6 +25,7 @@ export const Input = styled.TextInput`
   width: 80%;
   padding-left: 10px;
   border-radius: 10px;
+  color: black;
 `;
 
 export const RegisterButton = styled.TouchableOpacity`
