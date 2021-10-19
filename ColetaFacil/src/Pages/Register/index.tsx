@@ -25,7 +25,6 @@ const Register: React.FC = () => {
         keyboardType={'numeric'}
         returnKeyLabel={'next'}
         autoCorrect={false}
-        onChangeText={onChangeEmail}
       />
       <Input
         placeholder={'Email'}
@@ -33,6 +32,10 @@ const Register: React.FC = () => {
         keyboardType={'email-address'}
         autoCapitalize={'none'}
         returnKeyLabel={'next'}
+        onChangeText={text => {
+          onChangeEmail(text);
+          console.log(email);
+        }}
       />
       <Input
         placeholder={'Senha'}
@@ -41,7 +44,10 @@ const Register: React.FC = () => {
         returnKeyLabel={'next'}
         secureTextEntry
         autoCorrect={false}
-        onChangeText={onChangePassword}
+        onChangeText={text => {
+          onChangePassword(text);
+          console.log(email);
+        }}
       />
       <Input
         placeholder={'Confirmação de Senha'}
