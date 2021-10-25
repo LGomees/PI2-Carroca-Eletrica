@@ -1,43 +1,18 @@
-import React, {useEffect, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import {ButtonText, Container, Input, RegisterButton, Title} from './styles';
 import {useNavigation} from '@react-navigation/native';
 import {firebase} from '@react-native-firebase/auth';
 import {Alert} from 'react-native';
+import {AuthContext} from '../../Contexts/AuthProvider';
 
 const Register: React.FC = () => {
   const navigation = useNavigation();
 
-  const [email, onChangeEmail] = useState(null);
-  const [password, onChangePassword] = useState(null);
-  const [userCreated, setUserCreated] = useState(false);
+  const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
+  const [confirmPassword, setConfirmPassword] = useState();
 
-  const [user, setUser] = useState(null);
-
-  const registerUser = async () => {
-    if (email != null || password != null) {
-      console.log('entraou', email);
-      const user = await firebase
-        .auth()
-        .createUserWithEmailAndPassword(email, password)
-        .then(() => {
-          console.log('Usuário criado com sucesso', user);
-          setUserCreated(true);
-        })
-        .catch(error => {
-          if (error.code === 'auth/email-already-in-use') {
-            Alert.alert('Email já cadastrado');
-            console.log('That email address is already in use!');
-          }
-          if (error.code === 'auth/invalid-email') {
-            Alert.alert('Email inválido');
-            console.log('That email address is invalid!');
-          }
-        });
-    } else {
-      console.log('Email ou senha incorretos');
-      Alert.alert('Email ou senha incorretos');
-    }
-  };
+  const {register} = useContext(AuthContext);
 
   return (
     <Container>
@@ -55,10 +30,7 @@ const Register: React.FC = () => {
         keyboardType={'email-address'}
         autoCapitalize={'none'}
         returnKeyLabel={'next'}
-        onChangeText={text => {
-          onChangeEmail(text);
-          console.log(email);
-        }}
+        onChangeText={userEmail => setEmail(userEmail)}
       />
       <Input
         placeholder={'Senha'}
@@ -67,10 +39,7 @@ const Register: React.FC = () => {
         returnKeyLabel={'next'}
         secureTextEntry
         autoCorrect={false}
-        onChangeText={text => {
-          onChangePassword(text);
-          console.log(password);
-        }}
+        onChangeText={userPassword => setPassword(userPassword)}
       />
       <Input
         placeholder={'Confirmação de Senha'}
@@ -79,15 +48,17 @@ const Register: React.FC = () => {
         returnKeyLabel={'done'}
         secureTextEntry
         autoCorrect={false}
+        onChangeText={confirmUserPassword => {
+          setConfirmPassword(confirmUserPassword);
+          navigation.navigate('Dashboard');
+        }}
       />
-      <RegisterButton onPress={registerUser}>
+      <RegisterButton onPress={() => register(email, password)}>
         <ButtonText>CADASTRAR</ButtonText>
       </RegisterButton>
       <RegisterButton onPress={() => navigation.navigate('Dashboard')}>
         <ButtonText>CADASTRAR</ButtonText>
       </RegisterButton>
-
-      {userCreated && Alert.alert(`Usuário criado com sucesso!`)}
     </Container>
   );
 };
