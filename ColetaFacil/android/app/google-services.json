@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "200728567926",
+    "project_id": "pi2-coletafacil",
+    "storage_bucket": "pi2-coletafacil.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:200728567926:android:5af0a97244e175c20dff57",
+        "android_client_info": {
+          "package_name": "com.coletafacil"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "200728567926-o79bhvto3e7jlbm25ov2g3jo4j4oupe0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbcRlclIX9VG07WxUheyEIXatv2X_eouI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "200728567926-o79bhvto3e7jlbm25ov2g3jo4j4oupe0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
