@@ -16,3 +16,6 @@ Pensando nisso, o objetivo do projeto é desenvolver uma carroça que auxilie as
 
 Link para uso de arquivos do projeto
 https://drive.google.com/drive/folders/1dTTdqalo-qO0X3Hvk1ouduWt6JdQeBqp?usp=sharing
+
+Link para pontos de controle 
+https://drive.google.com/drive/folders/1-jCxM7X-UZPX9ySVg9SrnirpW1HziQyM?usp=sharing
