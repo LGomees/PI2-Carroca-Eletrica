@@ -13,3 +13,6 @@ E para o trabalho dessas cooperativas ser efetivo, os catadores são peça chave
 Sabe-se ainda, que o trabalho do transporte dos materiais reciclados é um importante componente da atividade e que esse se dá ainda de uma forma muito arcaica e penosa, sob tração animal ou humana, ou seja, os próprios catadores, conforme evidenciado pela Figura. Esse tipo de transporte pode trazer graves consequências para a saúde humana, principalmente quanto a dores musculares, má postura, dentre outros.
 
 Pensando nisso, o objetivo do projeto é desenvolver uma carroça que auxilie as cooperativas de lixo reciclável a recolher mais produtos, de forma mais eficiente e eficaz, gerando mais renda para os catadores cooperados.
+
+Link para uso de arquivos do projeto
+https://drive.google.com/drive/folders/1dTTdqalo-qO0X3Hvk1ouduWt6JdQeBqp?usp=sharing
