@@ -1,5 +1,9 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import {useNavigation} from '@react-navigation/native';
+
+import moment from 'moment';
+import Geolocation from '@react-native-community/geolocation';
+
 import AppContext from '../../Contexts/AppContext';
 
 import MenuBar from '../../Components/MenuBar';
@@ -20,7 +24,30 @@ const NewCollect: React.FC = () => {
   const [stage, setStage] = useState('normal');
   const [newWeight, setNewWeight] = useState(currentWeight + 50);
 
-  const handleNewCollect = () => {
+  const handleNewCollect = async () => {
+    let newReport = {
+      date: moment().format('Do MMMM YYYY, h:mm:ss a'),
+      weightCollected: newWeight - currentWeight,
+      location: {
+        latitude: 0,
+        longitude: 0,
+      },
+    };
+
+    await Geolocation.getCurrentPosition(info => {
+      newReport = {
+        ...newReport,
+        location: {
+          latitude: info.coords.latitude,
+          longitude: info.coords.longitude,
+        },
+      };
+      console.log('newReport', newReport);
+      let myReports = report;
+      myReports.push(newReport);
+      setReport(myReports);
+    });
+
     setCurrentWeight(newWeight);
     setStage('normal');
     navigation.navigate('Dashboard');

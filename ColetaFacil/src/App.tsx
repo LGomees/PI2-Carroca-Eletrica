@@ -21,7 +21,7 @@ const src: React.FC = () => {
     <AppContext.Provider
       value={{currentWeight, report, setCurrentWeight, setReport}}>
       <SafeAreaView style={{flex: 1}}>
-        <StatusBar hidden />
+        {/* <StatusBar hidden /> */}
         <NavigationContainer theme={navTheme}>
           <Routes />
         </NavigationContainer>

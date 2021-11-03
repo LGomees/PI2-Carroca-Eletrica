@@ -101,9 +101,9 @@ const Dashboard: React.FC = ({navigation}) => {
   const checkBateryLevel = () => {
     if (bateryLevel >= 85) {
       return completeBatery;
-    } else if (bateryLevel <= 85 && bateryLevel > 50) {
+    } else if (bateryLevel < 85 && bateryLevel > 60) {
       return highBatery;
-    } else if (bateryLevel == 50) {
+    } else if (bateryLevel <= 60 && bateryLevel >= 50) {
       return mediumBatery;
     } else if (bateryLevel < 50 && bateryLevel > 25) {
       return lowBatery;
@@ -138,7 +138,7 @@ const Dashboard: React.FC = ({navigation}) => {
               value={speed}
               max={45}
               step={2}
-              size={300}
+              size={270}
               // accentColor="#fe5252"
               backgroundColor="#3A4559"
               primaryArcWidth={15}
