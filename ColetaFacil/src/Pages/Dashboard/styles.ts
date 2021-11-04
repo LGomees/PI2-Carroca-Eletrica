@@ -56,7 +56,7 @@ export const SpeedometerContainer = styled.View`
 `;
 
 export const MySpeedometer = styled(Speedometer)`
-  width: 98%;
+  width: 92%;
   align-self: center;
 `;
 
