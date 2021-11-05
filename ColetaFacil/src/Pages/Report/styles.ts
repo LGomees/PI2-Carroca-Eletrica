@@ -9,6 +9,21 @@ export const Container = styled.View`
   background-color: #3aafb9;
 `;
 
+export const TableReports = styled.View`
+  width: 70%;
+  font-weight: bold;
+  border-radius: 10px;
+  flex-direction: column;
+  text-align: center;
+  justify-content: space-between;
+  background-color: #3aafb9;
+  color: white;
+  margin-top: 5%;
+  margin-left: 15%;
+  padding: 4%;
+  padding-left: 7%;
+`;
+
 export const ContentContainer = styled.View`
   flex: 9;
   /* width: 50%; */
