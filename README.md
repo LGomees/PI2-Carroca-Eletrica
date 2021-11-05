@@ -40,6 +40,18 @@ https://drive.google.com/drive/folders/1dTTdqalo-qO0X3Hvk1ouduWt6JdQeBqp?usp=sha
 Link para pontos de controle 
 https://drive.google.com/drive/folders/1-jCxM7X-UZPX9ySVg9SrnirpW1HziQyM?usp=sharing
 
+Link para os arquivos de solução de eletrônica
+https://drive.google.com/file/d/1l9GSlfNPjOsJpN4_iVXgzwa_ZQIZxfLY/view?usp=sharing
+
+Link para o vídeo propaganda 
+https://www.youtube.com/watch?v=5V9WRP2BtqU
+
+Link do PC3 atualizado
+
+
+
+
+
 ## Como rodar?
 
 Para rodar o projeto é necessário realizar a instalação do ambiente de desenvolimento [`React Native`](https://reactnative.dev/docs/environment-setup)
