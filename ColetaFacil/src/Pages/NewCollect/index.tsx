@@ -26,7 +26,7 @@ const NewCollect: React.FC = () => {
 
   const handleNewCollect = async () => {
     let newReport = {
-      date: moment().format('Do MMMM YYYY, h:mm:ss a'),
+      date: moment().format('DD-MM-YYYY, h:mm:ss a'),
       weightCollected: newWeight - currentWeight,
       location: {
         latitude: 0,
