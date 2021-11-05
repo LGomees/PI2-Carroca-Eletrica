@@ -24,6 +24,13 @@ export const TableReports = styled.View`
   padding-left: 7%;
 `;
 
+export const SendEmail = styled.View`
+  width: 50%;
+  flex-direction: row;
+  text-align: center;
+  justify-content: space-between;
+`;
+
 export const ContentContainer = styled.View`
   flex: 9;
   /* width: 50%; */

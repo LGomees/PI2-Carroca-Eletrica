@@ -54,6 +54,7 @@ export const SpeedometerContainer = styled.View`
   width: 85%;
   align-items: center;
   justify-content: center;
+  margin-left: 5%;
   margin-bottom: 20px;
   /* background-color: brown; */
 `;
