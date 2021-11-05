@@ -114,7 +114,7 @@ export const MyBatery = styled(Speedometer)`
 `;
 
 export const WeightContainer = styled.View`
-  width: 100%;
+  width: 90%;
   height: 48%;
   align-items: center;
   flex-direction: column;
