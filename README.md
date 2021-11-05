@@ -34,7 +34,11 @@ Caso reste duvidas você também pode entrar em contato conosco criando uma issu
 
 ## Documentação
 
-A documentação do projeto pode ser acessada pelo nosso site em https://github.com/LGomees/PI2-Carroca-Eletrica
+Link para uso de arquivos do projeto
+https://drive.google.com/drive/folders/1dTTdqalo-qO0X3Hvk1ouduWt6JdQeBqp?usp=sharing
+
+Link para pontos de controle 
+https://drive.google.com/drive/folders/1-jCxM7X-UZPX9ySVg9SrnirpW1HziQyM?usp=sharing
 
 ## Como rodar?
 
