@@ -13,7 +13,7 @@ export const ContentContainer = styled.View`
   flex: 9;
   /* width: 50%; */
   height: 96%;
-  padding: 1%;
+  padding: 3%;
   margin-right: 5px;
   border-radius: 10px;
   flex-direction: column;

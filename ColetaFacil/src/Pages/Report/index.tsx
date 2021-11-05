@@ -13,7 +13,7 @@ const Report: React.FC = () => {
     <Container>
       <MenuBar />
       <ContentContainer>
-        <Text>Relatório de Coletas</Text>
+        <Text style={{marginTop: '3%', fontWeight: 'bold'}}>Relatório de Coletas</Text>
         <ScrollView style={{width: '80%'}}>
           {report.map(function (report) {
             return (
