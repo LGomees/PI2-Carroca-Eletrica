@@ -26,7 +26,7 @@ const NewCollect: React.FC = () => {
 
   const handleNewCollect = async () => {
     let newReport = {
-      date: moment().format('Do MMMM YYYY, h:mm:ss a'),
+      date: moment().format('DD-MM-YYYY, h:mm:ss a'),
       weightCollected: newWeight - currentWeight,
       location: {
         latitude: 0,
@@ -73,7 +73,7 @@ const NewCollect: React.FC = () => {
         )}
         {stage === 'startNewCollect' ? (
           <>
-            <WeightDifferenceText>NOVA COLETA:{'\n'}</WeightDifferenceText>
+            <WeightDifferenceText style={{ marginTop: '3%', marginBottom: '-3%'}}>NOVA COLETA:{'\n'}</WeightDifferenceText>
             <WeightDifferenceText>
               Pesagem atual: {newWeight} Kg
             </WeightDifferenceText>
@@ -91,7 +91,7 @@ const NewCollect: React.FC = () => {
             <Button
               onPress={() => setStage('normal')}
               title={'CANCELAR'}
-              style={{backgroundColor: 'red', width: '25%'}}
+              style={{backgroundColor: 'red', width: '25%', marginTop: '-0.5%'}}
             />
           </>
         ) : (
