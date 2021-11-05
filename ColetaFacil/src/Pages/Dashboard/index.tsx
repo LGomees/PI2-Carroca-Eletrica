@@ -34,7 +34,7 @@ import {
   BateryImage,
 } from './styles';
 
-const Dashboard: React.FC = ({navigation}) => {
+const Dashboard: React.FC = () => {
   const {currentWeight} = useContext(AppContext);
   const isScreenOnFocus = useIsFocused();
 
@@ -47,6 +47,7 @@ const Dashboard: React.FC = ({navigation}) => {
   const [bateryLevel, setBateryLevel] = useState(100);
 
   const blinkersColor = ['#d2d3d5', '#3aafb9'];
+  const blinkersColorBreak = ['#d2d3d5', '#FF0000'];
 
   useEffect(() => {
     if (bateryLevel <= 30 && isScreenOnFocus) {
@@ -126,6 +127,13 @@ const Dashboard: React.FC = ({navigation}) => {
               onPress={() => console.log('asd')}
             />
             <Icon
+              name="circle"
+              type="font-awesome"
+              color={blinkersColorBreak[color]}
+              size={40}
+              onPress={() => console.log('asd')}
+            />
+            <Icon
               name="arrow-right"
               type="font-awesome"
               color={blinkersColor[color2]}
@@ -138,7 +146,7 @@ const Dashboard: React.FC = ({navigation}) => {
               value={speed}
               max={45}
               step={2}
-              size={300}
+              size={270}
               // accentColor="#fe5252"
               backgroundColor="#3A4559"
               primaryArcWidth={15}
@@ -172,7 +180,7 @@ const Dashboard: React.FC = ({navigation}) => {
               <BateryPercentage>{bateryLevel}%</BateryPercentage>
               <BateryText>Tempo Restante:</BateryText>
               <BateryTimeLeft>
-                {Math.floor(speed / 10)}h{speed + 15}m
+                {Math.floor((bateryLevel / 100)*8)}h{speed + 15}m
               </BateryTimeLeft>
             </BatteryTextContainer>
           </BatteryContainer>

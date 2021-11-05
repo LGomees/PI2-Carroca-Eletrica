@@ -17,6 +17,23 @@ import {Container} from './styles';
 
 const MenuBar: React.FC = () => {
   const navigation = useNavigation();
+   // const routePage = useRoute();
+  
+  // function getRoute() {
+  //   if (routePage.name=='Dashboard') {
+  //     return selectedCartIcon;
+  //   }
+  // }
+
+  // function getRouteBack() {
+  //   if (routePage.name=='Dashboard') {
+  //     const styles = StyleSheet.create({
+  //          backgroundColor: 'white',
+  //          color: 'black'     
+  //       });
+  //       return styles;
+  //    }
+  // }
   return (
     <Container>
       <MenuButton

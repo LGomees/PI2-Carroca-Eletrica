@@ -29,13 +29,16 @@ export const SearchTextInput = styled.TextInput`
 `;
 
 export const SearchContainer = styled.View`
-  width: 20%;
+  position: absolute;
+  top: 10;
+  left: 10;
+  width: 30%;
   height: 100%;
   overflow: visible;
 `;
 
 export const MapContainer = styled.View`
   position: relative;
-  width: 80%;
+  width: 100%;
   height: 100%;
 `;
