@@ -11,7 +11,7 @@ import {AuthProvider} from './Contexts/AuthProvider';
 const src: React.FC = () => {
   const [currentWeight, setCurrentWeight] = useState(0);
   const [report, setReport] = useState([]);
-  LogBox.ignoreLogs(['Warning']);
+  LogBox.ignoreLogs(['Warning', 'Expected']);
 
   useEffect(() => {}, []);
 
