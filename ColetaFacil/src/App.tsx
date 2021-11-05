@@ -1,15 +1,17 @@
 import 'react-native-gesture-handler';
 import React, {useEffect, useState} from 'react';
-import {SafeAreaView, StatusBar} from 'react-native';
+import {LogBox, SafeAreaView, StatusBar} from 'react-native';
 import {NavigationContainer, DefaultTheme} from '@react-navigation/native';
 
 import AppContext from './Contexts/AppContext';
 
 import Routes from './routes';
+import {AuthProvider} from './Contexts/AuthProvider';
 
 const src: React.FC = () => {
   const [currentWeight, setCurrentWeight] = useState(0);
   const [report, setReport] = useState([]);
+  LogBox.ignoreLogs(['Warning']);
 
   useEffect(() => {}, []);
 
@@ -18,15 +20,17 @@ const src: React.FC = () => {
   navTheme.colors.background = '#3aafb9';
 
   return (
-    <AppContext.Provider
-      value={{currentWeight, report, setCurrentWeight, setReport}}>
-      <SafeAreaView style={{flex: 1}}>
-        {/* <StatusBar hidden /> */}
-        <NavigationContainer theme={navTheme}>
-          <Routes />
-        </NavigationContainer>
-      </SafeAreaView>
-    </AppContext.Provider>
+    <AuthProvider>
+      <AppContext.Provider
+        value={{currentWeight, report, setCurrentWeight, setReport}}>
+        <SafeAreaView style={{flex: 1}}>
+          <StatusBar hidden />
+          <NavigationContainer theme={navTheme}>
+            <Routes />
+          </NavigationContainer>
+        </SafeAreaView>
+      </AppContext.Provider>
+    </AuthProvider>
   );
 };
 

@@ -45,6 +45,8 @@ export const BlinkersContainer = styled.View`
   align-items: flex-end;
   justify-content: space-between;
   margin-left: 12px;
+  margin-bottom: 20px;
+  margin-top: -15px;
 `;
 
 export const SpeedometerContainer = styled.View`
@@ -52,6 +54,7 @@ export const SpeedometerContainer = styled.View`
   width: 85%;
   align-items: center;
   justify-content: center;
+  margin-bottom: 20px;
   /* background-color: brown; */
 `;
 

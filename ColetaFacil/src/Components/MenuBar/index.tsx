@@ -1,6 +1,7 @@
 import React from 'react';
 
 import {useNavigation} from '@react-navigation/native';
+import {requestLocationPermission} from '../../utils/LocationPermission';
 
 import MenuButton from '../MenuButton';
 import cartIcon from '../../assets/images/iconeCarroca.png';
@@ -16,6 +17,23 @@ import {Container} from './styles';
 
 const MenuBar: React.FC = () => {
   const navigation = useNavigation();
+   // const routePage = useRoute();
+  
+  // function getRoute() {
+  //   if (routePage.name=='Dashboard') {
+  //     return selectedCartIcon;
+  //   }
+  // }
+
+  // function getRouteBack() {
+  //   if (routePage.name=='Dashboard') {
+  //     const styles = StyleSheet.create({
+  //          backgroundColor: 'white',
+  //          color: 'black'     
+  //       });
+  //       return styles;
+  //    }
+  // }
   return (
     <Container>
       <MenuButton
@@ -24,7 +42,10 @@ const MenuBar: React.FC = () => {
         src={cartIcon}
       />
       <MenuButton
-        onPress={() => navigation.navigate('MyMap')}
+        onPress={() => {
+          navigation.navigate('MyMap');
+          requestLocationPermission();
+        }}
         title={'Mapa'}
         src={mapIcon}
       />
