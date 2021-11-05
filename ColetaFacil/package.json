@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "android": "react-native run-android",
+    "all": "react-native run-android && react-native start",
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
