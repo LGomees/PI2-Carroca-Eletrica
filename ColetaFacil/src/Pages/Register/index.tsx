@@ -53,9 +53,9 @@ const Register: React.FC = () => {
           navigation.navigate('Dashboard');
         }}
       />
-      <RegisterButton onPress={() => register(email, password)}>
+      {/* <RegisterButton onPress={() => register(email, password)}>
         <ButtonText>CADASTRAR</ButtonText>
-      </RegisterButton>
+      </RegisterButton> */}
       <RegisterButton onPress={() => navigation.navigate('Dashboard')}>
         <ButtonText>CADASTRAR</ButtonText>
       </RegisterButton>

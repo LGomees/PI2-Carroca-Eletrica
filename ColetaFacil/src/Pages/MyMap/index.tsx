@@ -48,35 +48,6 @@ const Report: React.FC = () => {
     <Container>
       <MenuBar />
       <ContentContainer>
-        <SearchContainer>
-          <GooglePlacesAutocomplete
-            placeholder="Onde vamos?"
-            onPress={(data, details = null) => {
-              // 'details' is provided when fetchDetails = true
-              setDestination({
-                latitude: details.geometry.location.lat,
-                longitude: details.geometry.location.lng,
-                latitudeDelta: 0.00922,
-                longitudeDelta: 0.00421,
-              });
-            }}
-            query={{
-              key: 'AIzaSyDRUZ_X0Tuvhr9QaGabZBAwfRa3lJXhTcI',
-              language: 'pt-br',
-            }}
-            textInputProps={{
-              InputComp: SearchTextInput,
-              placeholderTextColor: 'black',
-              disableFullscreenUI: true,
-            }}
-            fetchDetails={true}
-            enablePoweredByContainer={true}
-            enableHighAccuracyLocation={true}
-            isRowScrollable={true}
-            minLength={3}
-            nearbyPlacesAPI={'GooglePlacesSearch'}
-          />
-        </SearchContainer>
         <MapContainer>
           <MapView
             style={{width: '100%', height: '100%'}}
@@ -109,6 +80,35 @@ const Report: React.FC = () => {
             )}
           </MapView>
         </MapContainer>
+        <SearchContainer>
+          <GooglePlacesAutocomplete
+            placeholder="Onde vamos?"
+            onPress={(data, details = null) => {
+              // 'details' is provided when fetchDetails = true
+              setDestination({
+                latitude: details.geometry.location.lat,
+                longitude: details.geometry.location.lng,
+                latitudeDelta: 0.00922,
+                longitudeDelta: 0.00421,
+              });
+            }}
+            query={{
+              key: 'AIzaSyDRUZ_X0Tuvhr9QaGabZBAwfRa3lJXhTcI',
+              language: 'pt-br',
+            }}
+            textInputProps={{
+              InputComp: SearchTextInput,
+              placeholderTextColor: 'black',
+              disableFullscreenUI: true,
+            }}
+            fetchDetails={true}
+            enablePoweredByContainer={true}
+            enableHighAccuracyLocation={true}
+            isRowScrollable={true}
+            minLength={3}
+            nearbyPlacesAPI={'GooglePlacesSearch'}
+          />
+        </SearchContainer>
         {distance &&
           Alert.alert(
             'Dados da viagem',
