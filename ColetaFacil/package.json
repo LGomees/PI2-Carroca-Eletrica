@@ -8,7 +8,11 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "bundle": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res",
+    "build": "cd android/ && ./gradlew clean app:assembleRelease -x bundleReleaseJsAndAssets",
+    "move": "mv android/app/build/outputs/apk/release/app-release.apk ../",
+    "apk": "yarn bundle && yarn build && yarn move"
   },
   "dependencies": {
     "@react-native-community/geolocation": "^2.0.2",
