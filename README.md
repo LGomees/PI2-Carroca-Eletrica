@@ -34,48 +34,26 @@ Caso reste duvidas você também pode entrar em contato conosco criando uma issu
 
 ## Documentação
 
-Link para uso de arquivos do projeto
-https://drive.google.com/drive/folders/1dTTdqalo-qO0X3Hvk1ouduWt6JdQeBqp?usp=sharing
+Link para uso de arquivos do projeto: [Clique aqui](https://drive.google.com/drive/folders/1dTTdqalo-qO0X3Hvk1ouduWt6JdQeBqp?usp=sharing)
 
-Link para pontos de controle 
-https://drive.google.com/drive/folders/1-jCxM7X-UZPX9ySVg9SrnirpW1HziQyM?usp=sharing
+Link para pontos de controle: [Clique aqui](https://drive.google.com/drive/folders/1-jCxM7X-UZPX9ySVg9SrnirpW1HziQyM?usp=sharing)
 
-Link para os arquivos de solução de eletrônica
-https://drive.google.com/file/d/1l9GSlfNPjOsJpN4_iVXgzwa_ZQIZxfLY/view?usp=sharing
+Link para os arquivos de solução de eletrônica: [Clique aqui](https://drive.google.com/file/d/1l9GSlfNPjOsJpN4_iVXgzwa_ZQIZxfLY/view?usp=sharing)
 
-Link para o vídeo propaganda 
-https://www.youtube.com/watch?v=5V9WRP2BtqU
+Link para o vídeo propaganda: [Clique aqui](https://www.youtube.com/watch?v=5V9WRP2BtqU)
 
-Link do PC3 atualizado
-https://drive.google.com/drive/folders/1iYXfv5r4XcUQKSmvI-a9bT6DGie3ppdf?usp=sharing
-
-
-
+Link do PC3 atualizado: [Clique aqui](https://drive.google.com/drive/folders/1iYXfv5r4XcUQKSmvI-a9bT6DGie3ppdf?usp=sharing)
 
 ## Como rodar?
 
-Para rodar o projeto é necessário realizar a instalação do ambiente de desenvolimento [`React Native`](https://reactnative.dev/docs/environment-setup)
+### Instalar o App diretamente no smartphone
 
-Após a instação das ferramentas necessárias abra o terminal e rode os comandos:
+Para testar o aplicativo diretamente em seu smartphone android, bastar baixa-lo através [deste link](https://github.com/LGomees/PI2-Carroca-Eletrica/raw/main/app-release.apk) e instalá-lo em seu dispositivo.
 
-```bash
-cd ColetaFacil/
-```
+### Rodar ambiente de desenvolvimento
 
-```bash
-yarn
-```
-
-```bash
-yarn start
-```
-
-Abra outro terminal e digite:
-
-```bash
-yarn android
-```
+Para rodar o projeto é necessário realizar o passo a passo de instação do ambiente de desenvolvimento, [acesse aqui.](guia-instalacao.md)
 
 ## Aplicativo
 
-Para testar o aplicativo em seu smartphone android realize o download do instalador APK através deste [`link`]()
+Para testar o aplicativo em seu smartphone android realize o download do instalador APK através deste [`link`](https://github.com/LGomees/PI2-Carroca-Eletrica/raw/main/app-release.apk)
